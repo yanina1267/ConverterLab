@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15E65" minimumToolsVersion="Automatic">
+    <entity name="Currency" representedClassName="Currency" syncable="YES">
+        <attribute name="ask" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bid" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isoCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="organization" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Organization" inverseName="currencies" inverseEntity="Organization" syncable="YES"/>
+    </entity>
+    <entity name="Organization" representedClassName="Organization" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="link" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="region" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="currencies" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Currency" inverseName="organization" inverseEntity="Currency" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Organization" positionX="-38" positionY="-112" width="128" height="148"/>
+        <element name="Currency" positionX="214" positionY="-82" width="128" height="118"/>
+    </elements>
+</model>
